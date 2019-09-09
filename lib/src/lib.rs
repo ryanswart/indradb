@@ -19,7 +19,6 @@ extern crate core;
 extern crate failure;
 #[macro_use]
 extern crate lazy_static;
-extern crate rand;
 extern crate regex;
 extern crate serde_json;
 extern crate uuid;

@@ -3,7 +3,7 @@
 use crate::errors::{ValidationError, ValidationResult};
 use chrono::offset::Utc;
 use chrono::DateTime;
-use rand::{OsRng, Rng};
+// use rand::{OsRng, Rng};
 use std::env;
 use uuid::v1::Context;
 use uuid::Uuid;
@@ -19,11 +19,12 @@ lazy_static! {
 /// platform-independent manner. Note that this will panic if the path cannot
 /// be formatted into UTF-8.
 pub fn generate_temporary_path() -> String {
-    let mut path = env::temp_dir();
-    path.push(generate_random_secret(TEMP_PATH_RANDOM_PART_LENGTH));
-    path.to_str()
-        .expect("Expected to be able to parse the temp path into UTF-8")
-        .to_string()
+    // let mut path = env::temp_dir();
+    // path.push(generate_random_secret(TEMP_PATH_RANDOM_PART_LENGTH));
+    // path.to_str()
+    //     .expect("Expected to be able to parse the temp path into UTF-8")
+    //     .to_string();
+    "unused".to_string()
 }
 
 /// Generates a UUID v1. this utility method uses a shared context and node ID
@@ -43,16 +44,17 @@ pub fn generate_uuid_v1() -> Uuid {
 /// Generates a securely random string consisting of letters (uppercase and
 /// lowercase) and digits.
 pub fn generate_random_secret(count: usize) -> String {
-    let mut chars = vec![];
-    let options = b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let mut rng = OsRng::new().unwrap();
+    // let mut chars = vec![];
+    // let options = b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // let mut rng = OsRng::new().unwrap();
 
-    for _ in 0..count {
-        let c: u8 = *rng.choose(options).unwrap();
-        chars.push(c);
-    }
+    // for _ in 0..count {
+    //     let c: u8 = *rng.choose(options).unwrap();
+    //     chars.push(c);
+    // }
 
-    String::from_utf8(chars).unwrap()
+    // String::from_utf8(chars).unwrap()
+    "unused".to_string()
 }
 
 /// Gets the next UUID that would occur after the given one.
